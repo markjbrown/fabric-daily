@@ -1,11 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "UserDataFunction",
-    "displayName": "generateandstore_chatprompt"
+    "type": "Notebook",
+    "displayName": "simple-query",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "b5602668-b18e-ada0-4a59-ee27bc1c7285"
+    "logicalId": "17cdb5b6-6ffc-886d-4b91-2635eaf1d3c1"
   }
 }

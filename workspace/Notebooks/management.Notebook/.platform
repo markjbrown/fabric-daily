@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Eventhouse",
-    "displayName": "mjbloganalytics",
-    "description": "mjbloganalytics"
+    "type": "Notebook",
+    "displayName": "management",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "0992cb93-01b3-8e67-485b-c172000496ad"
+    "logicalId": "9db30c37-b148-996f-4427-e92a44cdbc45"
   }
 }
