@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/userDataFunction/definition/1.1.0/schema.json",
+  "runtime": "PYTHON",
+  "connectedDataSources": [
+    {
+      "alias": "markslakehouse",
+      "artifactId": "c5a38906-ebfb-4cd0-b364-cbd139637c2b",
+      "artifactType": "Lakehouse",
+      "workspaceId": "3fbeaeb7-8d66-43dd-af03-877d6dee52d1"
+    }
+  ],
+  "functions": [
+    {
+      "name": "hello_fabric",
+      "description": "",
+      "isPublicEndpointEnabled": true
+    }
+  ],
+  "libraries": {
+    "public": [
+      {
+        "name": "fabric-user-data-functions",
+        "type": "PYPI",
+        "version": "0.2.32rc0"
+      }
+    ],
+    "private": []
+  }
+}

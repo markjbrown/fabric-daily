@@ -1,0 +1,109 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/CosmosDB/definition/CosmosDB/1.0.0/schema.json",
+  "containers": [
+    {
+      "id": "customer",
+      "conflictResolutionPolicy": {
+        "mode": "LastWriterWins",
+        "conflictResolutionPath": "/_ts",
+        "conflictResolutionProcedure": ""
+      },
+      "fullTextPolicy": {
+        "defaultLanguage": "en-US",
+        "fullTextPaths": []
+      },
+      "geospatialConfig": {
+        "type": "Geography"
+      },
+      "indexingPolicy": {
+        "automatic": true,
+        "indexingMode": "Consistent",
+        "includedPaths": [
+          {
+            "path": "/*",
+            "indexes": []
+          }
+        ],
+        "excludedPaths": [
+          {
+            "path": "/\"_etag\"/?"
+          },
+          {
+            "path": "/vectors/*"
+          }
+        ],
+        "compositeIndexes": [],
+        "spatialIndexes": [],
+        "vectorIndexes": [
+          {
+            "quantizationByteSize": 96,
+            "path": "/vectors",
+            "type": "quantizedFlat"
+          }
+        ],
+        "fullTextIndexes": []
+      },
+      "partitionKey": {
+        "paths": [
+          "/customerId"
+        ],
+        "kind": "Hash",
+        "version": 2
+      },
+      "vectorEmbeddingPolicy": {
+        "vectorEmbeddings": [
+          {
+            "path": "/vectors",
+            "dataType": "float32",
+            "dimensions": 1536,
+            "distanceFunction": "cosine"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leases",
+      "conflictResolutionPolicy": {
+        "mode": "LastWriterWins",
+        "conflictResolutionPath": "/_ts",
+        "conflictResolutionProcedure": ""
+      },
+      "fullTextPolicy": {
+        "defaultLanguage": "en-US",
+        "fullTextPaths": []
+      },
+      "geospatialConfig": {
+        "type": "Geography"
+      },
+      "indexingPolicy": {
+        "automatic": true,
+        "indexingMode": "Consistent",
+        "includedPaths": [
+          {
+            "path": "/*",
+            "indexes": []
+          }
+        ],
+        "excludedPaths": [
+          {
+            "path": "/\"_etag\"/?"
+          }
+        ],
+        "compositeIndexes": [],
+        "spatialIndexes": [],
+        "vectorIndexes": [],
+        "fullTextIndexes": []
+      },
+      "partitionKey": {
+        "paths": [
+          "/id"
+        ],
+        "kind": "Hash",
+        "version": 2
+      },
+      "vectorEmbeddingPolicy": {
+        "vectorEmbeddings": []
+      }
+    }
+  ]
+}

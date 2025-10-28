@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "mjbloganalytics",
+    "description": "mjbloganalytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0992cb93-01b3-8e67-485b-c172000496ad"
+  }
+}
