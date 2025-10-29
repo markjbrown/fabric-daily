@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/CosmosDB/definition/CosmosDB/1.0.0/schema.json",
+  "containers": [
+    {
+      "id": "SampleVectorData",
+      "conflictResolutionPolicy": {
+        "mode": "LastWriterWins",
+        "conflictResolutionPath": "/_ts",
+        "conflictResolutionProcedure": ""
+      },
+      "geospatialConfig": {
+        "type": "Geography"
+      },
+      "indexingPolicy": {
+        "automatic": true,
+        "indexingMode": "Consistent",
+        "includedPaths": [
+          {
+            "path": "/*",
+            "indexes": []
+          }
+        ],
+        "excludedPaths": [
+          {
+            "path": "/vectors/*"
+          },
+          {
+            "path": "/\"_etag\"/?"
+          }
+        ],
+        "compositeIndexes": [],
+        "spatialIndexes": [],
+        "vectorIndexes": [
+          {
+            "quantizationByteSize": 96,
+            "path": "/vectors",
+            "type": "quantizedFlat",
+            "quantizerType": "product"
+          }
+        ],
+        "fullTextIndexes": []
+      },
+      "partitionKey": {
+        "paths": [
+          "/categoryName"
+        ],
+        "kind": "Hash",
+        "version": 2
+      },
+      "vectorEmbeddingPolicy": {
+        "vectorEmbeddings": [
+          {
+            "path": "/vectors",
+            "dataType": "float32",
+            "dimensions": 1536,
+            "distanceFunction": "cosine"
+          }
+        ]
+      }
+    },
+    {
+      "id": "SampleData",
+      "conflictResolutionPolicy": {
+        "mode": "LastWriterWins",
+        "conflictResolutionPath": "/_ts",
+        "conflictResolutionProcedure": ""
+      },
+      "fullTextPolicy": {
+        "defaultLanguage": "en-US",
+        "fullTextPaths": []
+      },
+      "geospatialConfig": {
+        "type": "Geography"
+      },
+      "indexingPolicy": {
+        "automatic": true,
+        "indexingMode": "Consistent",
+        "includedPaths": [
+          {
+            "path": "/*",
+            "indexes": []
+          }
+        ],
+        "excludedPaths": [
+          {
+            "path": "/\"_etag\"/?"
+          }
+        ],
+        "compositeIndexes": [],
+        "spatialIndexes": [],
+        "vectorIndexes": [],
+        "fullTextIndexes": []
+      },
+      "partitionKey": {
+        "paths": [
+          "/categoryName"
+        ],
+        "kind": "Hash",
+        "version": 2
+      },
+      "vectorEmbeddingPolicy": {
+        "vectorEmbeddings": []
+      }
+    }
+  ]
+}
